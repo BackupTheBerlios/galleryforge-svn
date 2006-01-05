@@ -1,0 +1,11 @@
+prefix=/opt/galleryforge
+
+sudo rm -rf $prefix/*
+./clean
+sudo python setup.py install --prefix=$prefix
+sudo chmod +x $prefix/bin/galleryforge.py
+sudo chmod +x $prefix/bin/galleryforge-gui.py
+cd /opt/bin
+sudo rm galleryforge galleryforge-gui
+sudo ln -s $prefix/bin/galleryforge.py galleryforge
+sudo ln -s $prefix/bin/galleryforge-gui.py galleryforge-gui

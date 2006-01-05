@@ -1,0 +1,12 @@
+./clean
+python setup.py sdist
+#python setup.py bdist_wininst
+cp install/galleryforge*ebuild ~/web/numerodix/numerodix/files
+cp dist/galleryforge*.tar.gz ~/web/numerodix/numerodix/files
+sudo cp dist/galleryforge*.tar.gz /usr/portage/distfiles
+upjnet
+sudo rm /usr/portage/distfiles/galleryforge*.tar.gz
+sudo rm -rf /usr/local/overlay/media-gfx/galleryforge/*
+sudo cp install/galleryforge*ebuild /usr/local/overlay/media-gfx/galleryforge
+sudo ebuild /usr/local/overlay/media-gfx/galleryforge/galleryforge*ebuild digest
+

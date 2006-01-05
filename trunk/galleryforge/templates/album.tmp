@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>&raquo; numerodix gallery :: ${title} &laquo;</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="/numerodix/gallery_styles.css" type="text/css"/>
+	<meta name="Author" content="Martin Matusiak"/>
+</head>
+<body>
+
+<div class="album">
+
+	<div class="title">
+		&raquo;
+		<a href="/numerodix/gallery.php">numerodix gallery</a>
+		::
+		<a href="index.php">${title}</a>
+		&laquo;
+	</div>
+
+	<div class="menu">
+		<div class="underline"><img src="null.png" height="1" alt="null"/></div>
+		<div class="menulinks">
+			${first} ${prev} ${next} ${last}
+		</div>
+		<div class="underline"><img src="null.png" height="1" alt="null"/></div>
+	</div>
+	
+	<div class="main">
+		${album}
+	</div>
+	
+	<div class="menu">
+		<div class="underline"><img src="null.png" height="1" alt="null"/></div>
+		<div class="menulinks">
+			${first} ${prev} ${next} ${last}
+		</div>
+		<div class="underline"><img src="null.png" height="1" alt="null"/></div>
+	</div>
+	
+	<div class="copyright">
+		&copy; y2k+[2,] numerodix. no reproduction permitted without prior written consent.
+	</div>
+	
+</div>
+
+<div class="c">
+	<span class="smaller">
+		[ validate:
+		<a href="http://validator.w3.org/check?uri=referer">xhtml</a> | 
+		<a href="http://jigsaw.w3.org/css-validator/check/referer">css</a> ]
+		[ generated with <a href="http://www.juventuz.net/numerodix/code.php">galleryforge</a> ]
+	</span>
+</div>
+
+</body>
+</html>
