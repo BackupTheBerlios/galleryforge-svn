@@ -11,3 +11,4 @@ global-include *.xcf
 global-include *.wxg
 global-exclude *~
 global-exclude *pyc
+global-exclude .svn
