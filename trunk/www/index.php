@@ -12,7 +12,7 @@
 	<p>All you need to do is sort your photos into directories and galleryforge will rummage through them all, resize images, create thumbnails, write index pages, the whole shebang. But the greatest benefit lies not in creating your albums for the first time, it is that you can continue to add directories, and galleryforge will update your collection everytime, without touching what is already there.
 	</p>
 	
-	<p>Want to see a demo of a gallery created by galleryforge?
+	<p>Want to see a <a href="demo">demo</a> of a gallery created by galleryforge?
 	</p>
 	
 	<h3>Features</h3>
@@ -25,9 +25,19 @@
 		<li>Platform independent implementation in <a href="http://www.python.org">Python</a> and <a href="http://www.wxwidgets.org/">wxWidgets</a>.</li>
 	</ul>
 	
+	<h3>Demo</h3>
+	
+	<ul>
+		<li><a href="demo">Sample gallery created with galleryforge</a></li>
+	</ul>
+	
 	<h3>Download</h3>
 	
+	<ul>
+		<li><a href="http://developer.berlios.de/project/showfiles.php?group_id=5716">galleryforge</a></li>
+	</ul>
 	
+	galleryforge is licenced under the <a href="http://www.gnu.org/copyleft/gpl.html">General Public License (GPL)</a>.
 	
 	<h3>Screenshots</h3>
 	
