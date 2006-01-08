@@ -5,8 +5,8 @@
 inherit eutils
 
 DESCRIPTION="Creates static HTML album pages and images pages recursively"
-HOMEPAGE="http://www.juventuz.net/numerodix/code.php"
-SRC_URI="http://www.juventuz.net/numerodix/files/${P}.tar.gz"
+HOMEPAGE="http://galleryforge.berlios.de/"
+SRC_URI="http://download.berlios.de/galleryforge/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
