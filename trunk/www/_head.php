@@ -8,6 +8,26 @@
 </head>
 <body>
 
+<div class="menu">
+	[ 
+		<a href="index.php">Home</a>
+			|
+		<a href="about.php">About</a>
+			|
+		<a href="demo.php">Demo</a>
+			|
+		<a href="download.php">Download</a>
+			|
+		<a href="links.php">Links</a>
+			|
+		Screenshots (
+			<a href="sshots_linux.php">linux</a>
+				,
+			<a href="sshots_win32.php">win32</a>
+		)
+	]
+</div>
+
 <div class="master">
 
 	<div class="h1">
