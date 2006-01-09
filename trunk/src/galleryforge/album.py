@@ -50,6 +50,7 @@ class GalleryAlbum:
 		# can all images in directory
 		for i in self.img_exts:
 			imgs.extend(glob.glob("*" + i))
+			imgs.extend(glob.glob("*" + string.upper(i)))
 		imgs.sort()
 		
 		self.images = imgs[:]
