@@ -108,6 +108,9 @@ class Gallery:
 			dirname = directory.split("/").pop()
 		
 		dirtitle = string.replace(dirname[9:], "_", " ")
+		if dirtitle == "":
+			dirtitle = dirname
+		
 		return (dirname, dirtitle)
 
 
