@@ -42,7 +42,7 @@ class BlackBoxTest(unittest.TestCase):
 	def tearDown(self):
 		if os.path.exists(self.absloc):
 			pass
-			#shutil.rmtree(self.absloc)
+			shutil.rmtree(self.absloc)
 	
 	
 	def testNoClobber(self):
