@@ -36,9 +36,10 @@ new html).
 It was not intended to keep images in directories which have both images and
 sub directories, so organize your directories so that each directory contains
 either only images or only directories. It was also not intended to keep
-images in the basedir of your gallery, the one directory containing all the
-other directories (which in fact follows from the first rule). If you ignore
-this rule, galleryforge will not behave expected.
+images in the basedir of your gallery (because directory names are
+interpreted as album titles) the one directory containing all the other 
+directories (which in fact follows from the first rule). If you ignore this
+rule, galleryforge will not behave expected.
 
 
 ++ How to run from the command line?
