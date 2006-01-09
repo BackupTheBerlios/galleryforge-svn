@@ -7,7 +7,7 @@
   (http://www.gnu.org/copyleft/gpl.html)
 """
 
-import os, glob, shutil
+import os, glob, shutil, string
 import Image
 from logger import *
 import config
@@ -52,6 +52,24 @@ class GalleryImage:
 		self.readImage()
 	
 	
+	def makeTargetFormat(self):
+		(root, ext) = os.path.splitext(self.filename_root)
+		if not ext in ('.jpg', '.jpe', '.jpeg', '.gif', '.png'):
+			self.convert()
+	
+	
+	def convert(self, format='JPEG'):
+		(root, ext) = os.path.splitext(self.filename_root)
+		new_name = root + "." + string.lower(format)
+		
+		img = Image.open(self.filename_root)
+		img.save(new_name, format, quality=100)
+		
+		os.remove(self.filename_root)
+		self.filename_root = new_name
+		self.readImage()
+	
+	
 	def hasThumbnail(self):
 		if len(glob.glob(self.thumbnail_filename)) != 0:
 			return True
@@ -74,7 +92,7 @@ class GalleryImage:
 
 	
 	def makeTargetSize(self, x, y):
-		self.resize(x, y, qual=85)
+		self.resize(x, y)
 	
 	
 	def resize(self, x, y, filt=Image.ANTIALIAS, aspect_ratio=True, qual=85):

@@ -85,6 +85,20 @@ class ImageTest(unittest.TestCase):
 		self.assertEqual(target, f)
 	
 	
+	def testConvert(self):
+		"""testConvert(): convert() should convert to given format"""
+		
+		tifimg = "conv_img.tiff"
+		createDummyImage(tifimg)
+		img = GalleryImage(tifimg)
+		
+		img.convert(format='JPEG')
+		img.readImage()
+		deteleFile("conv_img.jpeg")
+		
+		self.assertEqual(img.format, 'JPEG')
+	
+	
 	def testResize(self):
 		"""testResize: resize() should yield dimensions of the target size"""
 		dim_x = 600

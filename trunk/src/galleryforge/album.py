@@ -82,6 +82,11 @@ class GalleryAlbum:
 			num = string.zfill(str(c), 4)
 			img.rename(num + ext)
 			
+			# convert if non-web format
+			img.makeTargetFormat()
+			self.images[c-1] = img.filename_root
+			i = img.filename_root
+			
 			# make thumbnail
 			img.makeThumbnail(config.settings['thumbnail_size_x'],
 				config.settings['thumbnail_size_y'])

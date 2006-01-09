@@ -28,7 +28,7 @@ settings['thumbnail_suffix'] = "_thumb"
 settings['album_cols'] = 2
 settings['album_rows'] = 3
 
-settings['image_extensions'] = "jpg,png"
+settings['image_extensions'] = "jpg,jpe,jpeg,gif,png,tif,tiff"
 
 settings['rebuild_thumbnails'] = False
 
