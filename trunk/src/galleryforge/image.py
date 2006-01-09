@@ -77,7 +77,7 @@ class GalleryImage:
 		self.resize(x, y, qual=85)
 	
 	
-	def resize(self, x, y, filt=Image.BICUBIC, aspect_ratio=True, qual=95):
+	def resize(self, x, y, filt=Image.ANTIALIAS, aspect_ratio=True, qual=85):
 		self.readImage()
 		
 		# keep aspect ration intact
