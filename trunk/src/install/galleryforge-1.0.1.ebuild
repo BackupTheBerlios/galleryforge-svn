@@ -10,8 +10,7 @@ SRC_URI="http://download.berlios.de/galleryforge/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86"
-RESTRICT="nomirror"
+KEYWORDS="~x86"
 IUSE="wxwindows"
 
 DEPEND=">=dev-python/imaging-1.1.4-r1

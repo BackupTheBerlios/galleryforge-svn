@@ -84,7 +84,7 @@ class GalleryImage:
 		logm("Creating thumbnail for " + self.filename_root)
 		shutil.copyfile(self.filename_root, self.thumbnail_filename)
 		thumb = GalleryImage(self.thumbnail_filename)
-		thumb.resize(x, y)
+		thumb.resize(x, y, qual=85)
 		
 	
 	def deleteThumbnail(self):
@@ -95,7 +95,7 @@ class GalleryImage:
 		self.resize(x, y)
 	
 	
-	def resize(self, x, y, filt=Image.ANTIALIAS, aspect_ratio=True, qual=85):
+	def resize(self, x, y, filt=Image.ANTIALIAS, aspect_ratio=True, qual=95):
 		self.readImage()
 		
 		# keep aspect ration intact
