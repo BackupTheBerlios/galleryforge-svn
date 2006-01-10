@@ -67,4 +67,4 @@ galleryforge/test/blackboxtest.py
 galleryforge/test/imagetest.py
 galleryforge/test/testall.py
 galleryforge/test/testhelper.py
-install/galleryforge-1.0.ebuild
+install/galleryforge-1.0.1.ebuild
