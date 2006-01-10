@@ -31,6 +31,7 @@ demo/a0002.html
 demo/gallery_styles.css
 demo/index.php
 demo/null.png
+doc/ChangeLog
 doc/INSTALL
 doc/LICENCE
 doc/README
@@ -66,4 +67,4 @@ galleryforge/test/blackboxtest.py
 galleryforge/test/imagetest.py
 galleryforge/test/testall.py
 galleryforge/test/testhelper.py
-install/galleryforge-1.0.1.ebuild
+install/galleryforge-1.0.ebuild

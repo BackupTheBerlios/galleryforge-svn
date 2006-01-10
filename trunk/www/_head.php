@@ -18,6 +18,8 @@
 			|
 		<a href="download.php">Download</a>
 			|
+		<a href="documentation.php">Documentation</a>
+			|
 		<a href="links.php">Links</a>
 			|
 		Screenshots (

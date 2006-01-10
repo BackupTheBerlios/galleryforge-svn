@@ -1,0 +1,8 @@
+Jan 9 2006, Martin Matusiak:
+
++++ release 1.0.1, bug fix release
+* Resize botches quality fix applied.
+* Non-web format images now converted to jpeg.
+* album.py now also scans for images with uppercase file extension.
+* If dirnames are not in yyyymmdd-title format, they are given no title. Fix
+now applied to use the dirname instead.
