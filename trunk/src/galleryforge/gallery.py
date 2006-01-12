@@ -18,11 +18,10 @@ from logger import *
 
 class Gallery:
 	
-	rebuild_thumbnails = config.settings['rebuild_thumbnails']
-	dummyimg = config.settings['dummyimg']
-	
-	img_exts = config.settings['image_extensions']
-	img_exts = img_exts.split(",")
+	rebuild_thumbnails = None
+	dummyimg = None
+
+	img_exts = None
 	
 	imgdirs = None
 	basepath = None
@@ -35,8 +34,11 @@ class Gallery:
 		self.scriptpath = os.getcwd()
 		self.basepath = os.path.abspath(basepath)
 		
-		if "rebuild_thumbnails" in opts:
-			self.rebuild_thumbnails = True
+		self.rebuild_thumbnails = config.settings['rebuild_thumbnails']
+		self.dummyimg = config.settings['dummyimg']
+		
+		self.img_exts = config.settings['image_extensions']
+		self.img_exts = self.img_exts.split(",")
 	
 	
 	def scanDirs(self):
@@ -72,7 +74,7 @@ class Gallery:
 				 + ", exiting. Did you mistakenly place the images in "
 				 + self.basepath + "?")
 			return False
-
+		
 		return True
 
 

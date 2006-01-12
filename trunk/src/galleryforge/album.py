@@ -21,27 +21,40 @@ class GalleryAlbum:
 	title = None
 	images = []
 	
-	rows = config.settings['album_rows']
-	cols = config.settings['album_cols']
-	
-	template_image = os.path.join(config.settings['script_basepath'],
-		config.settings['template_image'])
-	template_album = os.path.join(config.settings['script_basepath'],
-		config.settings['template_album'])
-	template_index = os.path.join(config.settings['script_basepath'],
-		config.settings['template_index'])
+	rows = None
+	cols = None
+
+	template_image = None
+	template_album = None
+	template_index = None
 		
-	dummyimg = config.settings['dummyimg']
+	dummyimg = None
 	
-	thumbnail_suffix = config.settings['thumbnail_suffix']
+	thumbnail_suffix = None
 	
-	img_exts = config.settings['image_extensions']
-	img_exts = img_exts.split(",")
+	img_exts = None
 	
 	
 	def __init__(self, dirname, title):
 		self.dirname = dirname
 		self.title = title
+		
+		self.rows = int(config.settings['album_rows'])
+		self.cols = int(config.settings['album_cols'])
+
+		self.template_image = os.path.join(config.settings['script_basepath'],
+			config.settings['template_image'])
+		self.template_album = os.path.join(config.settings['script_basepath'],
+			config.settings['template_album'])
+		self.template_index = os.path.join(config.settings['script_basepath'],
+			config.settings['template_index'])
+			
+		self.dummyimg = config.settings['dummyimg']
+		
+		self.thumbnail_suffix = config.settings['thumbnail_suffix']
+		
+		self.img_exts = config.settings['image_extensions']
+		self.img_exts = self.img_exts.split(",")
 	
 	
 	def scanImages(self):

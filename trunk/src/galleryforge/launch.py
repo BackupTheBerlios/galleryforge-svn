@@ -12,6 +12,7 @@
 import sys
 from gallery import Gallery
 from logger import *
+import config
 
 def main(basepath=None, **opts):
 	
@@ -23,6 +24,7 @@ def main(basepath=None, **opts):
 			return False
 #			sys.exit(1)
 	
+	config.read()
 	gallery = Gallery(basepath, opts)
 	if gallery.scanDirs():
 		gallery.deleteIndex()

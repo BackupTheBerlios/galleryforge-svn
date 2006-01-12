@@ -25,6 +25,9 @@ settings['thumbnail_size_y'] = 200
 #	thumbnail_size_y = int( thumbnail_size_x * 0.75 )
 settings['thumbnail_suffix'] = "_thumb"
 
+settings['image_quality'] = 95
+settings['thumbnail_quality'] = 85
+
 settings['album_cols'] = 2
 settings['album_rows'] = 3
 
@@ -78,10 +81,15 @@ def read():
 		cfile = open(config_file, "r")
 		conf.readfp(cfile)
 		for i in conf.items(section):
-			settings[i[0]] = i[1]
+			if i[1] == "True":
+				settings[i[0]] = True
+			elif i[1] == "False":
+				settings[i[0]] = False
+			else:
+				settings[i[0]] = i[1]
 		#for i in settings:
 			#conf.set("Main", i, str(settings[i]))
 	
 		cfile.close()
-	return settings
+		return settings
 

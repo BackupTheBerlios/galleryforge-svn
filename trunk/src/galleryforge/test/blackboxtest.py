@@ -34,7 +34,6 @@ class BlackBoxTest(unittest.TestCase):
 	
 	def setUp(self):
 		makeQuiet()
-		config.settings['script_basepath'] = splitPath(os.getcwd(), 2)
 		if os.path.exists(self.absloc):
 			shutil.rmtree(self.absloc)
 		
@@ -42,7 +41,7 @@ class BlackBoxTest(unittest.TestCase):
 	def tearDown(self):
 		if os.path.exists(self.absloc):
 			pass
-			shutil.rmtree(self.absloc)
+			#shutil.rmtree(self.absloc)
 	
 	
 	def testNoClobber(self):
@@ -96,15 +95,14 @@ class BlackBoxTest(unittest.TestCase):
 
 	def testRebuildThumbnails(self):
 		"""testRebuildThumbnails: thumbnails should be rebuilt (broken on win32)"""
-#		config.settings['rebuild_thumbnails'] = True
-
+			
 		absdest = os.path.abspath(self.loc)
 		os.makedirs(absdest)
 		
 		for i in "img.jpg", "img2.jpg", "img3.jpg":
 			afile = os.path.join(absdest, i)
 			createDummyImage(afile)
-
+		
 		launch.main(basepath=self.absloc)
 		
 		dates = {}
@@ -117,8 +115,14 @@ class BlackBoxTest(unittest.TestCase):
 		time.sleep(1)		# make sure they are not created too soon
 		tpost = time.strftime("%S", time.gmtime())
 		self.assertNotEqual(tpre, tpost)	# if test fails, should always be here
-
+		
+		config.settings['rebuild_thumbnails'] = True
+		config.store(config.settings)
+		
 		launch.main(basepath=self.absloc, rebuild_thumbnails=True)
+		
+		config.settings['rebuild_thumbnails'] = False
+		config.store(config.settings)
 		
 		for i in "0001_thumb.jpg", "0002_thumb.jpg", "0003_thumb.jpg":
 			afile = os.path.join(absdest, i)
@@ -139,7 +143,7 @@ class BlackBoxTest(unittest.TestCase):
 			createDummyImage(imfile)
 		
 		launch.main(basepath=self.absloc)
-
+		
 		self.assertTrue(os.path.exists(indexfile))
 		
 		tmp = open(indexfile, 'r')

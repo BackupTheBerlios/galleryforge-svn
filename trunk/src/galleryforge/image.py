@@ -24,10 +24,16 @@ class GalleryImage:
 	has_thumbnail = False
 	thumbnail_suffix = None
 	
+	image_quality = None
+	thumb_quality = None
+	
 	
 	def __init__(self, filename_root):
 		self.filename_root = filename_root
-
+		
+		self.image_quality = int(config.settings['image_quality'])
+		self.thumb_quality = int(config.settings['thumbnail_quality'])
+		
 		self.readImage()
 	
 	
@@ -84,15 +90,16 @@ class GalleryImage:
 		logm("Creating thumbnail for " + self.filename_root)
 		shutil.copyfile(self.filename_root, self.thumbnail_filename)
 		thumb = GalleryImage(self.thumbnail_filename)
-		thumb.resize(x, y, qual=85)
+		thumb.resize(x, y, qual=self.thumb_quality)
 		
 	
 	def deleteThumbnail(self):
-		os.remove(self.thumbnail_filename)
+		if os.path.exists(self.thumbnail_filename):
+			os.remove(self.thumbnail_filename)
 
 	
 	def makeTargetSize(self, x, y):
-		self.resize(x, y)
+		self.resize(x, y, qual=self.image_quality)
 	
 	
 	def resize(self, x, y, filt=Image.ANTIALIAS, aspect_ratio=True, qual=95):
