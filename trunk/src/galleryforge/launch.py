@@ -12,9 +12,9 @@
 import sys
 from gallery import Gallery
 from logger import *
-import config
+from config import config
 
-def main(basepath=None, **opts):
+def main(basepath=None):
 	
 	if basepath == None:
 		if (len(sys.argv) == 2):
@@ -25,7 +25,7 @@ def main(basepath=None, **opts):
 #			sys.exit(1)
 	
 	config.read()
-	gallery = Gallery(basepath, opts)
+	gallery = Gallery(basepath)
 	if gallery.scanDirs():
 		gallery.deleteIndex()
 		gallery.createAlbums()

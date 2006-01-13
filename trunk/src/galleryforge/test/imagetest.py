@@ -144,7 +144,7 @@ class ImageTest(unittest.TestCase):
 		img.readImage()
 		adim_x = img.dim_x
 		adim_y = img.dim_y
-				
+		
 		self.assertEqual(adim_x, dim_x)
 		self.assertEqual(adim_y, dim_y)
 
@@ -156,5 +156,4 @@ def run(verbosity=1):
 
 
 if __name__ == "__main__":
-	verbosity = get_verbose()
-	run(verbosity=verbosity)
+	run(verbosity=get_verbose())

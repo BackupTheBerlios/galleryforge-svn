@@ -13,7 +13,7 @@ import sys, shutil
 sys.path.append("..")
 
 import launch
-import config
+from config import config
 from testhelper import *
 from logger import *
 import unittest, glob, time
@@ -107,7 +107,8 @@ class BlackBoxTest(unittest.TestCase):
 		time_post = time.strftime("%S", time.gmtime())
 		self.assertNotEqual(time_pre, time_post)	# if test fails, should be here
 		
-		launch.main(basepath=self.absloc, rebuild_thumbnails=True)
+		config.settings['rebuild_thumbnails'] = True
+		launch.main(basepath=self.absloc)
 		
 		after_date = os.path.getmtime(path)
 		self.assertNotEqual(before_date, after_date)
@@ -159,5 +160,4 @@ def run(verbosity=1):
 
 
 if __name__ == "__main__":
-	verbosity = get_verbose()
-	run(verbosity=verbosity)
+	run(verbosity=get_verbose())

@@ -8,6 +8,7 @@
 """
 
 import os, sys, Image, ImageDraw
+import unittest
 
 def createDummyImage(filename, x=800, y=600):
 	img = Image.new("RGB", (x, y))

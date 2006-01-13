@@ -13,7 +13,8 @@ import sys, inspect
 sys.path.append("..")
 
 import wx, glade_guimain
-import launch, config
+import launch
+from config import config
 
 
 class GuiMainWindow(glade_guimain.MainFrame):

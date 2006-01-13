@@ -13,8 +13,11 @@
 import sys
 import imagetest
 import blackboxtest
+import configtest
 import testhelper
 
 verbose = testhelper.get_verbose()
+
 imagetest.run(verbose)
 blackboxtest.run(verbose)
+configtest.run(verbose)

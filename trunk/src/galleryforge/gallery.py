@@ -11,7 +11,7 @@
 
 import os, glob, string, sys
 from os.path import join, getsize
-import config
+from config import config
 from album import GalleryAlbum
 from logger import *
 
@@ -30,15 +30,11 @@ class Gallery:
 	index = None
 	
 	
-	def __init__(self, basepath, opts):
+	def __init__(self, basepath):
 		self.scriptpath = os.getcwd()
 		self.basepath = os.path.abspath(basepath)
 		
-		if "rebuild_thumbnails" in opts:
-			self.rebuild_thumbnails = opts["rebuild_thumbnails"]
-		else:
-			self.rebuild_thumbnails = config.settings['rebuild_thumbnails']
-		
+		self.rebuild_thumbnails = config.settings['rebuild_thumbnails']
 		self.dummyimg = config.settings['dummyimg']
 		
 		self.img_exts = config.settings['image_extensions']

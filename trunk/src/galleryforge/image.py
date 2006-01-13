@@ -10,7 +10,7 @@
 import os, glob, shutil, string
 import Image
 from logger import *
-import config
+from config import config
 
 class GalleryImage:
 	

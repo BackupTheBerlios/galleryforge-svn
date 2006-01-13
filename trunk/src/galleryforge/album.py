@@ -11,7 +11,7 @@
 
 import os, glob, re, string
 import Image
-import config
+from config import config
 from image import GalleryImage
 from logger import *
 
