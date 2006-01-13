@@ -26,10 +26,6 @@
 		<li>Platform independent implementation in <a href="http://www.python.org">Python</a> and <a href="http://www.wxwidgets.org/">wxWidgets</a>.</li>
 	</ul>
 	
-	<h3>ChangeLog</h3>
-	
-	<pre><? @include("doc/ChangeLog"); ?></pre>
-
 	<br/>
 	<a href="http://developer.berlios.de" title="BerliOS Developer"><img src="http://developer.berlios.de/bslogo.php?group_id=5716" width="124px" height="32px" alt="BerliOS Developer Logo"/></a>
 		
