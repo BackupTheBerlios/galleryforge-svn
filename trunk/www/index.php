@@ -28,10 +28,9 @@
 	
 	<h3>ChangeLog</h3>
 	
-	<pre>
-	<? @include("doc/ChangeLog"); ?>
-	</pre>
+	<pre><? @include("doc/ChangeLog"); ?></pre>
 
+	<br/>
 	<a href="http://developer.berlios.de" title="BerliOS Developer"><img src="http://developer.berlios.de/bslogo.php?group_id=5716" width="124px" height="32px" alt="BerliOS Developer Logo"/></a>
 		
 <? include("_foot.php"); ?>
