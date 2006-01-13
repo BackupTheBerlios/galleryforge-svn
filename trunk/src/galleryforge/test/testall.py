@@ -13,11 +13,8 @@
 import sys
 import imagetest
 import blackboxtest
+import testhelper
 
-verbose = 1
-if len(sys.argv) > 1 and sys.argv[1] == "-v":
-	verbose = 2
-sys.argv = sys.argv[:1]
-
+verbose = testhelper.get_verbose()
 imagetest.run(verbose)
 blackboxtest.run(verbose)

@@ -21,67 +21,67 @@ import unittest, glob, time
 
 class BlackBoxTest(unittest.TestCase):
 	
-	loc = "gallery/cat/subcat/subsubcat/album"
-	loc2 = "gallery/cat/subcat2/subsubcat/album"
-	loc3 = "gallery/cat/subcat/subsubcat2/album"
-	loc4 = "gallery/cat2/subcat/subsubcat2/album"
+	location = "gallery/cat/subcat/subsubcat/album"
+	location2 = "gallery/cat/subcat2/subsubcat/album"
+	location3 = "gallery/cat/subcat/subsubcat2/album"
+	location4 = "gallery/cat2/subcat/subsubcat2/album"
+	
+	locations = [location, location2, location3, location4]
 	
 	absloc = os.path.abspath("gallery")
 	
 	imfile = "img.jpg"
-	path = os.path.abspath(os.path.join(loc, imfile))
+	path = os.path.abspath(os.path.join(location, imfile))
 
 	
 	def setUp(self):
 		makeQuiet()
 		if os.path.exists(self.absloc):
 			shutil.rmtree(self.absloc)
-		
+		for i in self.locations:
+			abspath = os.path.abspath(i)
+			os.makedirs(abspath)
+	
 	
 	def tearDown(self):
 		if os.path.exists(self.absloc):
 			pass
-			#shutil.rmtree(self.absloc)
+			shutil.rmtree(self.absloc)
 	
 	
 	def testNoClobber(self):
 		"""testNoClobber: don't overwrite images from a previous run"""
-		itfile = "0001.jpg"
-		tpath = os.path.abspath(os.path.join(self.loc, itfile))
+		file = "0001.jpg"
+		path = os.path.abspath(os.path.join(self.location, file))
 
-		os.makedirs(self.loc)
-		createDummyImage(self.path)
+		createDummyImage(path)
 		
 		launch.main(basepath=self.absloc)
 		
-		odate = os.path.getmtime(tpath)
+		before_date = os.path.getmtime(path)
 		
 		launch.main(basepath=self.absloc)
 		
-		ndate = os.path.getmtime(tpath)
+		after_date = os.path.getmtime(path)
 		
-		self.assertEqual(odate, ndate)
-		
-		shutil.rmtree(self.absloc)
+		self.assertEqual(before_date, after_date)
 
 
 	def testScanDirs(self):
 		"""testScanDirs: process [only] all directories with images"""
-		for i in self.loc, self.loc2, self.loc3, self.loc4:
-			abspath = os.path.abspath(i)
-			os.makedirs(abspath)
+		for i in self.locations:
 			imfile = os.path.join(i, self.imfile)
 			
-			if not i == self.loc3:
+			if not i == self.location3:
 				createDummyImage(imfile)
 		
 		launch.main(basepath=self.absloc)
 		
-		for i in self.loc, self.loc2, self.loc3, self.loc4:
+		for i in self.locations:
 			abspath = os.path.abspath(i)
 			files = glob.glob(os.path.join(abspath, "*"))
 			
-			if i == self.loc3:
+			if i == self.location3:
 				self.assertEqual(len(files), 0)
 			else:
 				search_for = ["0001.jpg", "0001_thumb.jpg", "0001.html",
@@ -89,58 +89,50 @@ class BlackBoxTest(unittest.TestCase):
 				for f in search_for:
 					absfile = os.path.join(abspath, f)
 					self.assertTrue(absfile in files)
-				
-		shutil.rmtree(self.absloc)
 
 
 	def testRebuildThumbnails(self):
 		"""testRebuildThumbnails: thumbnails should be rebuilt (broken on win32)"""
-			
-		absdest = os.path.abspath(self.loc)
-		os.makedirs(absdest)
 		
-		for i in "img.jpg", "img2.jpg", "img3.jpg":
-			afile = os.path.join(absdest, i)
-			createDummyImage(afile)
+		file = "0001_thumb.jpg"
+		path = os.path.abspath(os.path.join(self.location, file))
+		createDummyImage(self.path)
 		
 		launch.main(basepath=self.absloc)
 		
-		dates = {}
-		for i in "0001_thumb.jpg", "0002_thumb.jpg", "0003_thumb.jpg":
-			afile = os.path.join(absdest, i)
-			
-			dates[i] = os.path.getmtime(afile)
+		before_date = os.path.getmtime(path)
 		
-		tpre = time.strftime("%S", time.gmtime())
+		time_pre = time.strftime("%S", time.gmtime())
 		time.sleep(1)		# make sure they are not created too soon
-		tpost = time.strftime("%S", time.gmtime())
-		self.assertNotEqual(tpre, tpost)	# if test fails, should always be here
-		
-		config.settings['rebuild_thumbnails'] = True
-		config.store(config.settings)
+		time_post = time.strftime("%S", time.gmtime())
+		self.assertNotEqual(time_pre, time_post)	# if test fails, should be here
 		
 		launch.main(basepath=self.absloc, rebuild_thumbnails=True)
 		
-		config.settings['rebuild_thumbnails'] = False
-		config.store(config.settings)
+		after_date = os.path.getmtime(path)
+		self.assertNotEqual(before_date, after_date)
+
+
+	def testMakeTargetFormat(self):
+		"""testMakeTargetFormat: convert from non-web format to jpeg"""
+		file = "0001.tiff"
+		path = os.path.abspath(os.path.join(self.location, file))
+		createDummyImage(path)
 		
-		for i in "0001_thumb.jpg", "0002_thumb.jpg", "0003_thumb.jpg":
-			afile = os.path.join(absdest, i)
-			cdate = os.path.getmtime(afile)
-			self.assertNotEqual(dates[i], cdate)
+		launch.main(basepath=self.absloc)
 		
-		shutil.rmtree(self.absloc)
+		files = glob.glob(os.path.join(self.location, "0001.jp*"))
+		parts = os.path.splitext(files[0])
+		self.assertEqual(parts[1], ".jpeg")
 
 
 	def testCheckIndex(self):
 		"""testCheckIndex: index file should be well formed"""
 		indexfile = os.path.join(self.absloc, "index")
 		
-		for i in self.loc, self.loc2, self.loc3, self.loc4:
-			abspath = os.path.abspath(i)
-			os.makedirs(abspath)
-			imfile = os.path.join(i, self.imfile)
-			createDummyImage(imfile)
+		for i in self.locations:
+			file = os.path.join(i, self.imfile)
+			createDummyImage(file)
 		
 		launch.main(basepath=self.absloc)
 		
@@ -154,10 +146,9 @@ class BlackBoxTest(unittest.TestCase):
 		
 		for line in lines:
 			parts = line.split(",")
-			path = os.path.join(self.absloc, parts[2])
-			self.assertTrue(path)
-		
-		shutil.rmtree(self.absloc)
+			path = os.path.abspath(parts[3][:-1])
+			path_exists = os.path.exists(path)
+			self.assertTrue(path_exists)
 
 
 
@@ -168,4 +159,5 @@ def run(verbosity=1):
 
 
 if __name__ == "__main__":
-	run()
+	verbosity = get_verbose()
+	run(verbosity=verbosity)

@@ -34,7 +34,11 @@ class Gallery:
 		self.scriptpath = os.getcwd()
 		self.basepath = os.path.abspath(basepath)
 		
-		self.rebuild_thumbnails = config.settings['rebuild_thumbnails']
+		if "rebuild_thumbnails" in opts:
+			self.rebuild_thumbnails = opts["rebuild_thumbnails"]
+		else:
+			self.rebuild_thumbnails = config.settings['rebuild_thumbnails']
+		
 		self.dummyimg = config.settings['dummyimg']
 		
 		self.img_exts = config.settings['image_extensions']

@@ -156,4 +156,5 @@ def run(verbosity=1):
 
 
 if __name__ == "__main__":
-	run()
+	verbosity = get_verbose()
+	run(verbosity=verbosity)

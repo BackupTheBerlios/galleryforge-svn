@@ -7,7 +7,7 @@
   (http://www.gnu.org/copyleft/gpl.html)
 """
 
-import os, Image, ImageDraw
+import os, sys, Image, ImageDraw
 
 def createDummyImage(filename, x=800, y=600):
 	img = Image.new("RGB", (x, y))
@@ -25,3 +25,11 @@ def splitPath(path, count=1):
 	for i in range(0, count):
 		path = os.path.split(path)[0]
 	return path
+
+
+def get_verbose():
+	verbose = 1
+	if len(sys.argv) > 1 and sys.argv[1] == "-v":
+		verbose = 2
+	sys.argv = sys.argv[:1]
+	return verbose
