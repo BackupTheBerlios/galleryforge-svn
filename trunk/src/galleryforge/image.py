@@ -70,6 +70,7 @@ class GalleryImage:
 		
 		img = Image.open(self.filename_root)
 		img.save(new_name, format, quality=100)
+		del img # deallocate object to avoid file locks
 		
 		os.remove(self.filename_root)
 		self.filename_root = new_name

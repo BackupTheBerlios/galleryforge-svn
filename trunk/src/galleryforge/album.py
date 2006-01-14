@@ -68,12 +68,18 @@ class GalleryAlbum:
 		
 		self.images = imgs[:]
 		
-		# filter out thumbnails
+		# filter
 		for i in imgs:
+			# thumbnail
 			if not i.count(self.thumbnail_suffix) == 0:
 				self.images.remove(i)
+			# dummyimg
 			if i == self.dummyimg:
 				self.images.remove(i)
+			# duplicates
+			if self.images.count(i) > 1:
+				for c in range(1, self.images.count(i)):
+					self.images.remove(i)
 
 
 	def processImages(self, forcethumbs=False):

@@ -1,3 +1,5 @@
+include clean
+include rdist
 recursive-include bin *
 recursive-include demo *
 recursive-include doc *

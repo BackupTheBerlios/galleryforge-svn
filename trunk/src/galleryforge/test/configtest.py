@@ -22,7 +22,12 @@ class ConfigTest(unittest.TestCase):
 	
 	def setUp(self):
 		makeQuiet()
-		
+	
+	
+	def tearDown(self):
+		settings = {}
+		config.store(settings)
+	
 	
 	def testSetProperty(self):
 		"""testProperty: set a property and check that it's set"""
