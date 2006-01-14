@@ -1,3 +1,12 @@
+Jan 14 2006, Martin Matusiak:
+
++++ release 1.1.2, bugfix release
+* File locking bug on Windows fixed.
+* Images selected for processing twice on Windows caused all sorts of problems,
+now fixed.
+* All tests passed on Linux and WindowsXP.
+
+
 Jan 13 2006, Martin Matusiak:
 
 +++ release 1.1.1
