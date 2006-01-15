@@ -32,6 +32,12 @@ large performance overhead, so that changes in templates are reflected in the
 new html).
 
 
+++ Which file formats are supported?
+galleryforge generates jpeg, gif and png images from jpeg, gif and png images 
+respectively. Formats supported for input are bmp, eps, pcd, pcx, ppm, tga,
+tiff, xpm.
+
+
 ++ Quirks?
 It was not intended to keep images in directories which have both images and
 sub directories, so organize your directories so that each directory contains

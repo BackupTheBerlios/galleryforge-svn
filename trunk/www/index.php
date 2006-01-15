@@ -1,10 +1,10 @@
 <? include("_head.php"); ?>
 
+	<h3>Introduction</h3>
+	
 	<div class="img">
 		<img src="images/ss/frontpage.png" alt="galleryforge"/>
 	</div>
-
-	<h3>Introduction</h3>
 	
 	<p>If you just happen to be an enthusiastic photographer who likes to publish his photos online, you may realize that it would be nice to cater to your visitors a bit and organize your collection in some way, perhaps adopting the standard convention of sorting your photos into <i>albums</i>, which display <i>thumbnails</i>. Voilá, galleryforge happens to do just that.
 	</p>

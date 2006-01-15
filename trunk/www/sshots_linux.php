@@ -12,6 +12,8 @@
 
 <p><img src="images/ss/linux_templates.png" alt="linux_templates"/></p>
 
+<p><img src="images/ss/linux_expert.png" alt="linux_expert"/></p>
+
 <p><img src="images/ss/linux_console.png" alt="linux_console"/></p>
 
 <? include("_foot.php"); ?>

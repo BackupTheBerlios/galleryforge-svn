@@ -42,11 +42,6 @@ For my own use, I needed something that would:
 </p>
 
 
-<h3>What file formats are supported?</h3>
-
-galleryforge generates jpeg, gif and png images from jpeg, gif and png images respectively. Formats supported for input are bmp, eps, pcd, pcx, ppm, tga, tiff, xpm.
-
-
 <h3>Why doesn't galleryforge have &lt;feature&gt; and the kitchen sink?</h3>
 
 <p>It's not terribly hard to imagine that galleryforge could be extended with an ftp client to publish albums, an image viewer to make management of photos easier, some basic imaging tools like scaling and cropping, an editor to handle the templates and so on. In fact, there are tools out there which do things like that.
@@ -55,7 +50,7 @@ galleryforge generates jpeg, gif and png images from jpeg, gif and png images re
 <p>Instead, galleryforge attempts to stay true to the old Unix dictum "do only one thing, and do it well". Why add an ftp upload feature without support for sftp? What if the user <i>does</i> want to use sftp? Instead of adding all sorts of things that may (yet may not) be useful, galleryforge strives to be good at creating galleries, and nothing more. This leaves the user to decide how to edit templates, how to transfer files and so on.
 </p>
 
-<p>In its core business, galleryforge aims to offer choice (supports various file formats, offers plenty of options, console and gui interface) and flexibility (editable templates, multiple albums). Features which would improve galleryforge's core value will be considered, peripheral features won't be.
+<p>In its core business, galleryforge aims to offer choice (supports various file formats, offers plenty of options, both console and gui interface) and flexibility (editable templates, multiple albums). Features which would improve galleryforge's core value will be considered, peripheral features won't be.
 </p>
 
 
