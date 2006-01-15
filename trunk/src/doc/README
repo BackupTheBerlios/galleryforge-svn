@@ -65,3 +65,7 @@ galleryforge is made to be very customizable. The directory 'templates'
 contains the templates for all the pages generated. You can modify these
 files to your heart's content, just remember to keep the replacement tags,
 such as ${album} intact, otherwise galleryforge will complain.
+
+
+++ Where do I find more info on galleryforge?
+Try the project's website: http://galleryforge.berlios.de/
