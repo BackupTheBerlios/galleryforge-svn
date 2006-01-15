@@ -2,6 +2,14 @@
 
 <h2>About</h2>
 
+<h3>Why doesn't galleryforge have &lt;feature&gt; and the kitchen sink?</h3>
+
+<p>It's not terribly hard to imagine that galleryforge could be extended with an ftp client to publish albums, an image viewer to make management of photos easier, some basic imaging tools like scaling and cropping, an editor to handle the templates and so on. In fact there are tools out there which do things like that.
+</p>
+
+<p>Instead, galleryforge attempts to stay true to the old Unix dictum "do only one thing, and do it well". Why add an ftp upload feature without support for sftp? What if the user <i>does</i> want to use sftp? Instead of adding all sorts of things that may (yet may not) be useful, galleryforge strives to be good at creating galleries, and nothing more. This leaves the user to decide how to edit templates, how to transfer files and so on.
+</p>
+
 <h3>What makes galleryforge different?</h3>
 
 For my own use, I needed something that would:
