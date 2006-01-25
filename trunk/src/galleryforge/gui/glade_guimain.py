@@ -21,7 +21,7 @@ class MainFrame(wx.Frame):
         self.button_3 = wx.Button(self.launch, -1, "Save settings")
         self.exitBtn = wx.Button(self.launch, -1, "Exit")
         self.static_line_3 = wx.StaticLine(self.launch, -1, style=wx.LI_VERTICAL)
-        self.copyright_field = wx.TextCtrl(self.launch, -1, u"galleryforge version 1.1.2\n© 2005-6 Martin Matusiak\n\nLicenced under the General Public License (GPL), which roughly means you can do whatever the hell you want with this code.", style=wx.TE_MULTILINE|wx.TE_READONLY|wx.NO_BORDER)
+        self.copyright_field = wx.TextCtrl(self.launch, -1, u"galleryforge version 1.1.3\n© 2005-6 Martin Matusiak\n\nLicenced under the General Public License (GPL), which roughly means you can do whatever the hell you want with this code.", style=wx.TE_MULTILINE|wx.TE_READONLY|wx.NO_BORDER)
         self.bitmap_3 = wx.StaticBitmap(self.launch, -1, wx.Bitmap("galleryforge_logo.png", wx.BITMAP_TYPE_ANY))
         self.bitmap_1 = wx.StaticBitmap(self.basics, -1, wx.Bitmap("gf_gallery_path.png", wx.BITMAP_TYPE_ANY))
         self.label_4 = wx.StaticText(self.basics, -1, "gallery path:")

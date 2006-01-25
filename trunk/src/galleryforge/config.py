@@ -92,7 +92,7 @@ class config:
 				#conf.set("Main", i, str(settings[i]))
 		
 			cfile.close()
-			return cls.settings
+		return cls.settings
 	
 	
 	store = classmethod(store)

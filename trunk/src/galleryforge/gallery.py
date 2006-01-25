@@ -105,13 +105,18 @@ class Gallery:
 
 
 	def getDirName(self, directory):
-		dirname = directory
+		dirname, dirtitle = directory, directory
 		if directory.count("/") >= 0:
 			dirname = directory.split("/").pop()
 		
-		dirtitle = string.replace(dirname[9:], "_", " ")
-		if dirtitle == "":
+		try:
+			# first 8 chars are all digits, this is a date
+			date = int(dirname[:8])
+			dirtitle = dirname[9:]
+		except ValueError:
+			# fall back on using the whole dirname as a title
 			dirtitle = dirname
+		dirtitle = string.replace(dirtitle, "_", " ")
 		
 		return (dirname, dirtitle)
 

@@ -4,7 +4,7 @@ from distutils.core import setup
 
 setup(
 	name='galleryforge',
-	version='1.1.2',
+	version='1.1.3',
 	description='Creates static HTML album pages and images pages recursively',
 	author='Martin Matusiak',
 	author_email='numerodix@gmail.com',
