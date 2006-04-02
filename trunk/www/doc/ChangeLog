@@ -1,3 +1,11 @@
+Jan 25 2006, Martin Matusiak:
+
++++ release 1.1.3, minor bugfix release
+* Album names deduced from directory names are now processed slightly more
+intelligently.
+* Small bother with choking at the absence of a config file now fixed.
+
+
 Jan 14 2006, Martin Matusiak:
 
 +++ release 1.1.2, bugfix release
