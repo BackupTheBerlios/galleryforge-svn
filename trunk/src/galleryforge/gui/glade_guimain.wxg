@@ -104,7 +104,7 @@
                                                 <object class="wxTextCtrl" name="copyright_field" base="EditTextCtrl">
                                                     <foreground>#000000</foreground>
                                                     <style>wxTE_MULTILINE|wxTE_READONLY|wxNO_BORDER</style>
-                                                    <value>galleryforge version 1.1.5\n© 2005-6 Martin Matusiak\n\nLicenced under the General Public License (GPL), which roughly means you can do whatever the hell you want with this code.</value>
+                                                    <value>galleryforge version 1.1.5\n© 2005-6 Martin Matusiak\n\nLicensed under the General Public License (GPL), which roughly means you can do whatever the hell you want with this code.</value>
                                                     <background>#efefef</background>
                                                     <size>148,220</size>
                                                 </object>
