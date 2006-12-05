@@ -64,4 +64,6 @@ command line (make sure the path to python.exe is correct)
 
 c:\> c:\python\python.exe install.py
 
+This will install galleryforge into c:\galleryforge.
+
 ------------------------------------------------------------------------------
