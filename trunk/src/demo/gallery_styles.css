@@ -31,8 +31,8 @@ background-color: #2a3847;
 margin-left: auto;
 margin-right: auto;
 border-width:  1px;
-border-color: #ffffff;
-border-style:solid;
+border-color: #bbb;
+border-style: solid;
 }
 
 .image {
@@ -41,8 +41,8 @@ background-color: #2a3847;
 margin-left: auto;
 margin-right: auto;
 border-width:  1px;
-border-color: #ffffff;
-border-style:solid;
+border-color: #bbb;
+border-style: solid;
 }
 
 img {
@@ -73,6 +73,10 @@ margin: 5px;
 clear: both;
 text-align: center;
 padding: 2px;
+}
+
+.copysmall {
+font-size: 10px;
 }
 
 .menu{
