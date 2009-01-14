@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#
+# <desc> Static HTML gallery generator from image directories </desc>
 
 """
   Author:     Martin Matusiak <numerodix@gmail.com>
